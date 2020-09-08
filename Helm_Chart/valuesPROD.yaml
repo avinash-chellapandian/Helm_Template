@@ -13,7 +13,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "labels"
+fullnameOverride: "$serviceName"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -98,16 +98,16 @@ autoscaling:
   targetCPUUtilizationPercentage: 60
   targetMemoryAverageValue: 512Mi
   
-servicelabel:
-  ComponentId: $ServiceComponentId
-  ComponentName: labels
-  Service: $ServiceServiceLabel
-  ServiceLine: $ServiceServiceLine
-  ServiceOffering: $ServiceServiceOffering
-  app: labels
+servicelabel:  
+  ComponentId: $servicelabelComponentId
+  ComponentName: $serviceName
+  Service: $servicelabelService
+  ServiceLine: $servicelabelServiceLine
+  ServiceOffering: $servicelabelServiceOffering
+  app: $serviceName
   
 label:  
-  name: labels
+  name: $serviceName
 
 pdb:
   minAvailable: 50%

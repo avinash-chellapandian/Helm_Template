@@ -15,7 +15,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "DeviceSymptomsHistory"
+fullnameOverride: "$serviceName"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -101,12 +101,12 @@ autoscaling:
   targetMemoryAverageValue: 512Mi
   
 servicelabel:  
-  ComponentId: ea4be841-e794-42c6-8a6f-c7c1979411b3
-  ComponentName: DeviceSymptomsHistory
-  Service: ServiceOrderManagement
-  ServiceLine: CustomerCareServices
-  ServiceOffering: SupplyChain
-  app: DeviceSymptomsHistory
+  ComponentId: $servicelabelComponentId
+  ComponentName: $serviceName
+  Service: $servicelabelService
+  ServiceLine: $servicelabelServiceLine
+  ServiceOffering: $servicelabelServiceOffering
+  app: $serviceName
 
 pdb:
   minAvailable: 50%

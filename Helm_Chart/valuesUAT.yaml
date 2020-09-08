@@ -13,7 +13,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "RODS"
+fullnameOverride: "$ServiceName"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -104,10 +104,10 @@ servicelabel:
   Service: $servicelabelService
   ServiceLine: $servicelabelServiceLine
   ServiceOffering: $servicelabelServiceOffering
-  app: $serviceName
+  app: $ServiceName
   
 label:  
-  name: $serviceName
+  name: $ServiceName
 
 pdb:
   minAvailable: 50%

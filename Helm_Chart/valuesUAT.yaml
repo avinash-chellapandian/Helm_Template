@@ -1,4 +1,4 @@
-# Default values for $ServiceName.
+# Default values for RODS.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -13,7 +13,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "$ServiceName"
+fullnameOverride: "RODS"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -98,16 +98,16 @@ autoscaling:
   targetCPUUtilizationPercentage: 60
   targetMemoryAverageValue: 512Mi
   
-servicelabel:
-  ComponentId: $ServiceComponentId
-  ComponentName: $ServiceName
-  Service: $ServiceServiceLabel
-  ServiceLine: $ServiceServiceLine
-  ServiceOffering: $ServiceServiceOffering
-  app: $ServiceName
+servicelabel:  
+  ComponentId: $servicelabelComponentId
+  ComponentName: $serviceName
+  Service: $servicelabelService
+  ServiceLine: $servicelabelServiceLine
+  ServiceOffering: $servicelabelServiceOffering
+  app: $serviceName
   
 label:  
-  name: $ServiceName
+  name: $serviceName
 
 pdb:
   minAvailable: 50%

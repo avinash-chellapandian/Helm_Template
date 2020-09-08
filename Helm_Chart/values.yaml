@@ -15,7 +15,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "$serviceName"
+fullnameOverride: "$ServiceName"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -102,11 +102,11 @@ autoscaling:
   
 servicelabel:  
   ComponentId: $servicelabelComponentId
-  ComponentName: $serviceName
+  ComponentName: $ServiceName
   Service: $servicelabelService
   ServiceLine: $servicelabelServiceLine
   ServiceOffering: $servicelabelServiceOffering
-  app: $serviceName
+  app: $ServiceName
 
 pdb:
   minAvailable: 50%
